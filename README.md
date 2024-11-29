@@ -62,6 +62,10 @@ Groove 自带了 vscode launch.json 文件，内部声明了 HTTP debug 启动�
 
 Groove 提倡编写单元测试。
 
+### 优雅关闭
+
+虽然 Go 应用在容器中由 bin/exec 脚本启动，但可确保 Go 应用为容器主程序 (pid: 1)，可正常接收容器的 term/kill 等信号，您可自行在代码中编写优雅退出逻辑。
+
 ## Groove 快捷指令
 
 ### 本地启动 Groove App
