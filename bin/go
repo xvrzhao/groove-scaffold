@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# 代替原生 go 命令
+
+cd $(dirname $0)/..
+
+if [ ! -f ".env" ]; then
+  echo "error: no .env file"
+  exit 1
+fi
+
+# 过滤以 # 开头的行和空行
+export $(cat .env | grep -v '^#' | grep -v '^[[:space:]]*$' | xargs)
+
+go $@
