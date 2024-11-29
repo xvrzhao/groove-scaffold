@@ -1,8 +1,8 @@
 package main
 
 import (
-	"groove-app/handler"
-	"groove-app/middleware"
+	"github.com/xvrzhao/groove-scaffold/handler"
+	"github.com/xvrzhao/groove-scaffold/middleware"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

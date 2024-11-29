@@ -2,9 +2,10 @@ package main
 
 import (
 	"flag"
-	"groove-app/cmd/gencode/generator"
-	"groove-app/db"
 	"log"
+
+	"github.com/xvrzhao/groove-scaffold/cmd/gencode/generator"
+	"github.com/xvrzhao/groove-scaffold/db"
 )
 
 var (

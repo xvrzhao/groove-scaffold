@@ -1,5 +1,5 @@
-registry = your.registry.host/your_repo_name
-project = groove-app
+registry = my.registry.host/my_repo_name
+project = my_project_name
 image = ${registry}/${project}
 
 version ?=
@@ -13,6 +13,12 @@ model ?=
 .PHONY: check image push publish api run-http run-cron
 
 check:
+ifeq ($(registry),my.registry.host/my_repo_name)
+	$(error Please specify variables in Makefile: registry, project)
+endif
+ifeq ($(project),my_project_name)
+	$(error Please specify variables in Makefile: registry, project)
+endif
 ifeq ($(version),)
 	$(error image version not specified)
 endif

@@ -1,4 +1,4 @@
-module groove-app
+module github.com/xvrzhao/groove-scaffold
 
 go 1.23.0
 

@@ -1,8 +1,8 @@
 package pwdutil
 
 import (
-	"groove-app/pkg/crypto"
-	"groove-app/pkg/strings"
+	"github.com/xvrzhao/groove-scaffold/pkg/crypto"
+	"github.com/xvrzhao/groove-scaffold/pkg/strings"
 )
 
 // SaltHashPwd generates a salt and the salt-hashed password.

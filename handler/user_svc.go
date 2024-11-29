@@ -2,9 +2,10 @@ package handler
 
 import (
 	"fmt"
-	"groove-app/db"
-	"groove-app/db/model"
-	"groove-app/pkg/pwdutil"
+
+	"github.com/xvrzhao/groove-scaffold/db"
+	"github.com/xvrzhao/groove-scaffold/db/model"
+	"github.com/xvrzhao/groove-scaffold/pkg/pwdutil"
 
 	"gorm.io/gorm/clause"
 )

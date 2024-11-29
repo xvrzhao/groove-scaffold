@@ -1,7 +1,7 @@
 package model
 
 import (
-	"groove-app/pkg/basemodel"
+	"github.com/xvrzhao/groove-scaffold/pkg/basemodel"
 )
 
 const TableNameUser = "users"

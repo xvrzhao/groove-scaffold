@@ -3,10 +3,11 @@ package db
 import (
 	"context"
 	"fmt"
-	"groove-app/pkg/logger"
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/xvrzhao/groove-scaffold/pkg/logger"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

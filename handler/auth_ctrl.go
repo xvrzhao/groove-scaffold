@@ -2,9 +2,10 @@ package handler
 
 import (
 	"fmt"
-	"groove-app/pkg/jwtutil"
-	"groove-app/pkg/logger"
-	"groove-app/pkg/resp"
+
+	"github.com/xvrzhao/groove-scaffold/pkg/jwtutil"
+	"github.com/xvrzhao/groove-scaffold/pkg/logger"
+	"github.com/xvrzhao/groove-scaffold/pkg/resp"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,10 +1,11 @@
 package handler
 
 import (
-	"groove-app/db/model"
-	"groove-app/pkg/page"
-	"groove-app/pkg/resp"
 	"strconv"
+
+	"github.com/xvrzhao/groove-scaffold/db/model"
+	"github.com/xvrzhao/groove-scaffold/pkg/page"
+	"github.com/xvrzhao/groove-scaffold/pkg/resp"
 
 	"github.com/gin-gonic/gin"
 )
