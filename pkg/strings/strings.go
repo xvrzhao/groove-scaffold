@@ -9,7 +9,7 @@ const (
 	numLetters = numbers + "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 )
 
-// RandNum 生成长度为 len 的数字字符串。
+// RandNum generates a numeric string of length len.
 func RandNum(len int) string {
 	res := make([]byte, len)
 	asset, remain := rand.Uint64(), 16
@@ -30,7 +30,7 @@ func RandNum(len int) string {
 	return string(res)
 }
 
-// RandLetterNum 生成包含大小写字母和数字的随机字符串。
+// RandLetterNum Generates a random string containing uppercase and lowercase letters and numbers.
 func RandLetterNum(len int) string {
 	res := make([]byte, len)
 	asset, remain := rand.Int63(), 10

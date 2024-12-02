@@ -52,6 +52,6 @@ func BadRequest(c *gin.Context, message string) {
 func InternalErr(c *gin.Context) {
 	c.JSON(http.StatusInternalServerError, ResponseBody{
 		Code:    int(internalErrCode),
-		Message: "服务端出错",
+		Message: "internal server error",
 	})
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 代替原生 go 命令
+# Replace The Native `go` Command
 
 cd $(dirname $0)/..
 

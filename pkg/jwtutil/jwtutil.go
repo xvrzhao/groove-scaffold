@@ -51,7 +51,7 @@ func Gen(payload TokenPayload) (string, error) {
 
 func Parse(token string) (payload *TokenPayload, msg string, ok bool) {
 	if token == "" {
-		return nil, "token 不存在", false
+		return nil, "token does not exists", false
 	}
 
 	tk, err := jwt.Parse(token, func(t *jwt.Token) (interface{}, error) {
@@ -64,17 +64,17 @@ func Parse(token string) (payload *TokenPayload, msg string, ok bool) {
 			payload.retrieveFromClaims(mapClaims)
 			return payload, "", ok
 		} else {
-			return nil, "解析 claims 失败", false
+			return nil, "failed to parse claims", false
 		}
 	}
 
 	switch {
 	case errors.Is(err, jwt.ErrTokenMalformed) || errors.Is(err, jwt.ErrTokenSignatureInvalid):
-		return nil, "token 不合法", false
+		return nil, "token invalid", false
 	case errors.Is(err, jwt.ErrTokenExpired):
-		return nil, "token 已过期", false
+		return nil, "token expired", false
 	default:
-		return nil, fmt.Sprintf("token 错误：%v", err), false
+		return nil, fmt.Sprintf("token error: %v", err), false
 	}
 }
 

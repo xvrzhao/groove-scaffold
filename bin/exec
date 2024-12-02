@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 容器内程序启动入口
+# Program Startup Entry In The Container
 
 cd $(dirname $0)
 
@@ -9,8 +9,8 @@ if [ ! -f ".env" ]; then
   exit 1
 fi
 
-# 过滤以 # 开头的行和空行
+# filter lines starting with # and empty lines
 export $(cat .env | grep -v '^#' | grep -v '^[[:space:]]*$' | xargs)
 
-# 以容器主进程启动，以便优雅退出
+# start as the container main process for graceful shutdown
 exec $@
