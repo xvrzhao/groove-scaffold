@@ -10,7 +10,7 @@ tag = ${version}-${env}-${arch}
 table ?=
 model ?=
 
-.PHONY: check image push publish api run-http run-cron
+.PHONY: check image push publish crud run-http run-cron code
 
 check:
 ifeq ($(registry),my.registry.host/my_repo_name)
@@ -33,7 +33,7 @@ push: check
 publish: image push
 	@echo "\n-------------------------\n\nComplete! Copy image name: \n\033[3;32m${image}:${tag}\033[0m"
 
-api:
+crud:
 	bin/go run ./cmd/gencode -t ${table} -m ${model}
 
 run-http:
@@ -41,3 +41,7 @@ run-http:
 
 run-cron:
 	bin/go run ./cmd/cron
+
+code:
+	gofmt -l -s -w ./
+	go vet -race ./...
