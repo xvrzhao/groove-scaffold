@@ -16,7 +16,7 @@ func ({{.lowerCamelModel}}Svc) Page(offset, limit int) ({{.lowerCamelModel}}s []
 	}
 
 	{{.lowerCamelModel}}s = make([]model.{{.upperCamelModel}}, 0, limit)
-	if err := db.Client.Limit(limit).Offset(offset).Preload(clause.Associations).Find(&{{.lowerCamelModel}}s).Error; err != nil {
+	if err := db.Client.Order("created_at desc").Limit(limit).Offset(offset).Preload(clause.Associations).Find(&{{.lowerCamelModel}}s).Error; err != nil {
 		return nil, 0, err
 	}
 	return {{.lowerCamelModel}}s, total, nil

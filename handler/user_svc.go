@@ -26,7 +26,7 @@ func (userSvc) Page(offset, limit int) (users []model.User, total int64, err err
 	}
 
 	users = make([]model.User, 0, limit)
-	if err := db.Client.Limit(limit).Offset(offset).Find(&users).Error; err != nil {
+	if err := db.Client.Order("created_at desc").Limit(limit).Offset(offset).Find(&users).Error; err != nil {
 		return nil, 0, err
 	}
 	return users, total, nil
