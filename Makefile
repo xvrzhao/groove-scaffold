@@ -2,10 +2,9 @@ registry = my.registry.host/my_repo_name
 project = my_project_name
 image = ${registry}/${project}
 
-version ?=
+version ?= latest
 env ?= production
-arch = amd64
-tag = ${version}-${env}-${arch}
+tag = ${version}-${env}
 
 table ?=
 model ?=
@@ -25,7 +24,7 @@ endif
 	@echo image tag: ${tag}
 
 image: check
-	docker buildx build --platform=linux/amd64 --build-arg PUBLISH_MODE=${env} -t ${image}:${tag} .
+	docker buildx build --platform linux/amd64,linux/arm64 --build-arg PUBLISH_MODE=${env} -t ${image}:${tag} .
 
 push: check
 	docker push ${image}:${tag}
